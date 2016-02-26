@@ -1,0 +1,38 @@
+{
+    "name": "jordanjay29/flarum-ext-summaries",
+    "description": "Show summaries on all discussions.",
+    "type": "flarum-extension",
+    "keywords": ["discussion"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jordan Schnaidt (jordanjay29)",
+            "email": "jordanschnaidt@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/jordanjay29/flarum-ext-summaries/issues",
+        "source": "https://github.com/jordanjay29/flarum-ext-summaries"
+    },
+    "require": {
+        "flarum/core": "^0.1.0-beta.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "JordanJay29\\Summaries\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        },
+        "flarum-extension": {
+            "title": "Summaries",
+            "icon": {
+                "name": "thumb-tack",
+                "backgroundColor": "#D13E32",
+                "color": "#fff"
+            }
+        }
+    }
+}
