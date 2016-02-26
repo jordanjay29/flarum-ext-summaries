@@ -29,8 +29,8 @@
         "flarum-extension": {
             "title": "Summaries",
             "icon": {
-                "name": "thumb-tack",
-                "backgroundColor": "#D13E32",
+                "name": "sticky-note",
+                "backgroundColor": "#00bac9",
                 "color": "#fff"
             }
         }

@@ -1,5 +1,15 @@
 # flarum-ext-summaries
 
-Broken right now, please don't try to use. 
+This is an extension made for [Flarum](https://github.com/flarum/flarum) which adds a summary excerpt to each discussion on the discussion list page. This was inspired by the same behavior in Flarum's Sticky extension. 
 
-Eventually, this extension will provide summary excerpts on the Discussions List for Flarum, modeled after the same behavior from Flarum's 1st party Sticky extension.
+**Changelog:**
+Version 0.1.0
+-first release
+
+**Coming Soon:**
+-configurable excerpt length
+
+**Links**
+-[Github](https://github.com/jordanjay29/flarum-ext-summaries) (for code and issues)
+-[Flarum]()
+-[Packagist]()
