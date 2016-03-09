@@ -47,15 +47,15 @@ System.register('jordanjay29/summaries/components/summarySettingsModal', ['flaru
         }
     };
 });;
-System.register('jordanjay29/summaries/main', ['flarum/app', 'flarum/auth/github/components/summarySettingsModal'], function (_export) {
+System.register('jordanjay29/summaries/main', ['flarum/app', 'jordanjay29/summaries/components/summarySettingsModal'], function (_export) {
   'use strict';
 
   var app, SummarySettingsModal;
   return {
     setters: [function (_flarumApp) {
       app = _flarumApp['default'];
-    }, function (_flarumAuthGithubComponentsSummarySettingsModal) {
-      SummarySettingsModal = _flarumAuthGithubComponentsSummarySettingsModal['default'];
+    }, function (_jordanjay29SummariesComponentsSummarySettingsModal) {
+      SummarySettingsModal = _jordanjay29SummariesComponentsSummarySettingsModal['default'];
     }],
     execute: function () {
 
