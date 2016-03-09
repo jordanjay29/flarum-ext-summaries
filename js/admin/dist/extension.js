@@ -46,4 +46,24 @@ System.register('jordanjay29/summaries/components/summarySettingsModal', ['flaru
             _export('default', SummarySettingsModal);
         }
     };
+});;
+System.register('jordanjay29/summaries/main', ['flarum/app', 'flarum/auth/github/components/summarySettingsModal'], function (_export) {
+  'use strict';
+
+  var app, SummarySettingsModal;
+  return {
+    setters: [function (_flarumApp) {
+      app = _flarumApp['default'];
+    }, function (_flarumAuthGithubComponentsSummarySettingsModal) {
+      SummarySettingsModal = _flarumAuthGithubComponentsSummarySettingsModal['default'];
+    }],
+    execute: function () {
+
+      app.initializers.add('jordanjay29-summaries', function () {
+        app.extensionSettings['jordanjay29-summaries'] = function () {
+          return app.modal.show(new SummarySettingsModal());
+        };
+      });
+    }
+  };
 });
