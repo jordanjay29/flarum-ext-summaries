@@ -11,7 +11,7 @@ namespace JordanJay29\Summaries\Listener;
 
 use Flarum\Settings\SettingsRepositoryInterface;
 use Illuminate\Contracts\Events\Dispatcher;
-use Flarum\Event\PrepareUnserializedSettings;
+use Flarum\Event\PrepareApiAttributes;
 
 class LoadUserSettings
 {
@@ -26,7 +26,7 @@ class LoadUserSettings
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(PrepareUnserializedSettings::class, [$this, 'load']);
+        $events->listen(PrepareApiAttributes::class, [$this, 'load']);
     }
 
     /**
@@ -34,8 +34,8 @@ class LoadUserSettings
      *
      * @param PrepareUnserializedSettings $event
      */
-    public function load(PrepareUnserializedSettings $event)
+    public function load(PrepareApiAttributes $event)
     {
-        $event->attributes['flarum-ext-summaries.excerpt-length'] = $this->settings->get('flarum-ext-summaries.excerpt-length');
+        $event->attributes['flarum-ext-summaries.excerpt_length'] = $this->settings->get('flarum-ext-summaries.excerpt_length');
     }
 }
