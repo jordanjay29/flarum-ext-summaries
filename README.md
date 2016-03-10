@@ -4,10 +4,10 @@ An extension made for [Flarum](https://github.com/flarum/flarum) which adds a su
 
 **Changelog:**  
 Version 0.1.0  
--first release
-Version 0.2.0
--New icon/color for extension
--Set the excerpt length (default is 200 characters)
+-first release  
+Version 0.2.0  
+-New icon/color for extension  
+-Set the excerpt length (default is 200 characters)  
 
 **Coming Soon:**  
 -configurable excerpt length
