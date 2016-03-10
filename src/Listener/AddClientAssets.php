@@ -1,6 +1,6 @@
 <?php
 /* This is part of the jordanjay/flarum-ext-summaries project.
- * 
+ *
  * Modified code (c)2016 Jordan Schnaidt
  *
  * Original code (c) Toby Zerner <toby.zerner@gmail.com>
@@ -33,6 +33,12 @@ class AddClientAssets
             $event->addAssets([
                 __DIR__.'/../../js/forum/dist/extension.js',
                 __DIR__.'/../../less/forum/extension.less'
+            ]);
+            $event->addBootstrapper('jordanjay29/summaries/main');
+        }
+        if ($event->isAdmin()) {
+            $event->addAssets([
+                __DIR__.'/../../js/admin/dist/extension.js',
             ]);
             $event->addBootstrapper('jordanjay29/summaries/main');
         }

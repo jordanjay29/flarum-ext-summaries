@@ -1,4 +1,5 @@
 import { extend } from 'flarum/extend';
+import app from 'flarum/app';
 import DiscussionList from 'flarum/components/DiscussionList';
 import DiscussionListItem from 'flarum/components/DiscussionListItem';
 import { truncate } from 'flarum/utils/string';
@@ -12,9 +13,10 @@ export default function addSummaryExcerpt() {
     const discussion = this.props.discussion;
 
     const startPost = discussion.startPost();
+    const excerptLength = app.forum.attribute('flarum-ext-summaries.excerpt_length') || 200;
 
     if (startPost) {
-      const excerpt = <span>{truncate(startPost.contentPlain(), 200)}</span>;
+      const excerpt = <span>{truncate(startPost.contentPlain(), excerptLength)}</span>;
 
       items.add('excerpt', excerpt, -100);
     }
