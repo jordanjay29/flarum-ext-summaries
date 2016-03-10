@@ -15,6 +15,10 @@ use Flarum\Event\PrepareUnserializedSettings;
 
 class LoadUserSettings
 {
+    public function __construct(SettingsRepositoryInterface $settings)
+    {
+        $this->settings = $settings;
+    }
     /**
      * Listen for the setting we need.
      *
@@ -22,7 +26,7 @@ class LoadUserSettings
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(PrepareUnserializedSettings::class, [$this, 'flarum-ext-summaries.excerpt_length']);
+        $events->listen(PrepareUnserializedSettings::class, [$this, 'load']);
     }
 
     /**
@@ -30,8 +34,8 @@ class LoadUserSettings
      *
      * @param PrepareUnserializedSettings $event
      */
-    // public function load(PrepareUnserializedSettings $event)
-    // {
-    //     $events->settings['flarum-ext-summaries.excerpt_length']
-    // }
+    public function load(PrepareUnserializedSettings $event)
+    {
+        $event->attributes['flarum-ext-summaries.excerpt-length'] = $this->settings->get('flarum-ext-summaries.excerpt-length');
+    }
 }
