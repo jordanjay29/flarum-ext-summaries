@@ -36,6 +36,11 @@ System.register('jordanjay29/summaries/components/summarySettingsModal', ['flaru
                                 null,
                                 'Summaries Settings'
                             ),
+                            m(
+                                'p',
+                                null,
+                                'Summary excerpt length in characters (default is 200)'
+                            ),
                             m('input', { className: 'FormControl', bidi: this.setting('flarum-ext-summaries.excerpt_length') })
                         )];
                     }

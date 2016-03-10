@@ -13,7 +13,7 @@ export default class SummarySettingsModal extends SettingsModal {
             return [
               <div className="Form-group">
                 <label>Summaries Settings</label>
-                <input className="FormControl" bidi={this.setting('flarum-ext-summaries.excerpt_length')}/>
+                <p>Summary excerpt length in characters (default is 200)</p><input className="FormControl" bidi={this.setting('flarum-ext-summaries.excerpt_length')}/>
               </div>
             ];
         }
