@@ -4,15 +4,19 @@ An extension made for [Flarum](https://github.com/flarum/flarum) which adds a su
 
 **Changelog:**  
 Version 0.1.0  
--first release  
+- Initial release.
+
 Version 0.2.0  
--New icon/color for extension  
--Set the excerpt length (default is 200 characters)  
+- New icon/color for extension. 
+- Added the ability to set a custom length for the excerpt (default is **200** characters)
+
+Version 0.3.0
+- Update to Beta 8.  
 
 **Coming Soon:**  
--configurable excerpt length
+- ~~Configurable excerpt length~~ (**Completed**)
 
 **Links**  
--[Github](https://github.com/jordanjay29/flarum-ext-summaries) (for code and issues)  
--[Flarum](https://discuss.flarum.org/d/2151-summaries-showing-excerpts-on-discussions-page)  
--[Packagist](https://packagist.org/packages/jordanjay29/flarum-ext-summaries)  
+- [Github](https://github.com/jordanjay29/flarum-ext-summaries) (for code and issues)  
+- [Flarum](https://discuss.flarum.org/d/2151-summaries-showing-excerpts-on-discussions-page)  
+- [Packagist](https://packagist.org/packages/jordanjay29/flarum-ext-summaries)  

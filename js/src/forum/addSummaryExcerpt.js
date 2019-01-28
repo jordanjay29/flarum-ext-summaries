@@ -12,11 +12,11 @@ export default function addSummaryExcerpt() {
   extend(DiscussionListItem.prototype, 'infoItems', function(items) {
     const discussion = this.props.discussion;
 
-    const startPost = discussion.startPost();
+    const firstPost = discussion.firstPost();
     const excerptLength = app.forum.attribute('flarum-ext-summaries.excerpt_length') || 200;
 
-    if (startPost) {
-      const excerpt = <span>{truncate(startPost.contentPlain(), excerptLength)}</span>;
+    if (firstPost) {
+      const excerpt = <span>{truncate(firstPost.contentPlain(), excerptLength)}</span>;
 
       items.add('excerpt', excerpt, -100);
     }

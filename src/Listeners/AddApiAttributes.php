@@ -1,7 +1,7 @@
 <?php 
 /* This is part of the jordanjay/flarum-ext-summaries project.
  * 
- * Modified code (c)2016 Jordan Schnaidt
+ * Modified code (c)2019 Jordan Schnaidt
  *
  * Original code (c) Toby Zerner <toby.zerner@gmail.com>
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace JordanJay29\Summaries\Listener;
+namespace JordanJay29\Summaries\Listeners;
 
 use Flarum\Api\Controller\ListDiscussionsController;
-use Flarum\Event\ConfigureApiController;
+use Flarum\Api\Event\WillGetData;
 use Illuminate\Contracts\Events\Dispatcher;
 
 class AddApiAttributes
@@ -22,16 +22,16 @@ class AddApiAttributes
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(ConfigureApiController::class, [$this, 'includeStartPost']);
+        $events->listen(WillGetData::class, [$this, 'includeFirstPost']);
     }
     
     /**
-     * @param ConfigureApiController $event
+     * @param WillGetData $event
      */
-    public function includeStartPost(ConfigureApiController $event)
+    public function includeFirstPost(WillGetData $event)
     {
         if ($event->isController(ListDiscussionsController::class)) {
-            $event->addInclude('startPost');
+            $event->addInclude('firstPost');
         }
     }
 }
