@@ -2,7 +2,14 @@
     "name": "jordanjay29/flarum-ext-summaries",
     "description": "Show summaries on all discussions.",
     "type": "flarum-extension",
-    "keywords": ["discussion"],
+    "keywords": [
+        "flarum",
+        "discussion",
+        "summary",
+        "summaries",
+        "excerpt",
+        "excerpts"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -15,7 +22,7 @@
         "source": "https://github.com/jordanjay29/flarum-ext-summaries"
     },
     "require": {
-        "flarum/core": "^0.1.0-beta.3"
+        "flarum/core": "^0.1.0-beta.8"
     },
     "autoload": {
         "psr-4": {
@@ -26,10 +33,13 @@
         "branch-alias": {
             "dev-master": "0.1.x-dev"
         },
+        "flagrow": {
+            "discuss": "https://discuss.flarum.org/d/2151-summaries-showing-excerpts-on-discussions-page"
+        },
         "flarum-extension": {
             "title": "Summaries",
             "icon": {
-                "name": "sticky-note",
+                "name": "fas fa-sticky-note",
                 "backgroundColor": "#00bac9",
                 "color": "#fff"
             }
