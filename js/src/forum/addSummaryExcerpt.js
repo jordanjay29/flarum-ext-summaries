@@ -6,7 +6,7 @@ import { truncate } from 'flarum/utils/string';
 
 export default function addSummaryExcerpt() {
   extend(DiscussionList.prototype, 'requestParams', function(params) {
-    params.include.push('startPost');
+    params.include.push('firstPost');
   });
 
   extend(DiscussionListItem.prototype, 'infoItems', function(items) {
