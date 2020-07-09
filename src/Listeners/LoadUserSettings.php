@@ -39,6 +39,7 @@ class LoadUserSettings
     {
         if ($event->isSerializer(ForumSerializer::class)) {
             $event->attributes['flarum-ext-summaries.excerpt_length'] = $this->settings->get('flarum-ext-summaries.excerpt_length');
+            $event->attributes['flarum-ext-summaries.first_or_last_post'] = $this->settings->get('flarum-ext-summaries.first_or_last_post');
         }
     }
 }

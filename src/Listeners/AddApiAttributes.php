@@ -22,16 +22,17 @@ class AddApiAttributes
      */
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(WillGetData::class, [$this, 'includeFirstPost']);
+        $events->listen(WillGetData::class, [$this, 'addIncludes']);
     }
-    
+
     /**
      * @param WillGetData $event
      */
-    public function includeFirstPost(WillGetData $event)
+    public function addIncludes(WillGetData $event)
     {
         if ($event->isController(ListDiscussionsController::class)) {
             $event->addInclude('firstPost');
+            $event->addInclude('lastPost');
         }
     }
 }

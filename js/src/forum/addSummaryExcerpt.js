@@ -7,18 +7,30 @@ import { truncate } from 'flarum/utils/string';
 export default function addSummaryExcerpt() {
   extend(DiscussionList.prototype, 'requestParams', function(params) {
     params.include.push('firstPost');
+    params.include.push('lastPost');
   });
 
   extend(DiscussionListItem.prototype, 'infoItems', function(items) {
     const discussion = this.props.discussion;
-
-    const firstPost = discussion.firstPost();
     const excerptLength = app.forum.attribute('flarum-ext-summaries.excerpt_length') || 200;
+    const firstOrLastPost = app.forum.attribute('flarum-ext-summaries.first_or_last_post') || 'first';
 
-    if (firstPost) {
-      const excerpt = <span>{truncate(firstPost.contentPlain(), excerptLength)}</span>;
+    if (firstOrLastPost === 'first') {
+      const firstPost = discussion.firstPost();
 
-      items.add('excerpt', excerpt, -100);
+      if (firstPost) {
+        const excerpt = <span>{truncate(firstPost.contentPlain(), excerptLength)}</span>;
+
+        items.add('excerpt', excerpt, -100);
+      }
+    } else if (firstOrLastPost === 'last') {
+        const lastPost = discussion.lastPost();
+
+        if (lastPost) {
+            const excerpt = <span>{truncate(lastPost.contentPlain(), excerptLength)}</span>;
+
+            items.add('excerpt', excerpt, -100);
+        }
     }
   });
 }
