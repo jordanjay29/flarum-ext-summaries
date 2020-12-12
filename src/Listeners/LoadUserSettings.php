@@ -10,24 +10,19 @@
 namespace JordanJay29\Summaries\Listeners;
 
 use Flarum\Settings\SettingsRepositoryInterface;
-use Illuminate\Contracts\Events\Dispatcher;
 use Flarum\Api\Event\Serializing;
 use Flarum\Api\Serializer\ForumSerializer;
 
 class LoadUserSettings
 {
+    /**
+     * @var SettingsRepositoryInterface
+     */
+    protected $settings;
+    
     public function __construct(SettingsRepositoryInterface $settings)
     {
         $this->settings = $settings;
-    }
-    /**
-     * Listen for the setting we need.
-     *
-     * @param Dispatcher $events
-     */
-    public function subscribe(Dispatcher $events)
-    {
-        $events->listen(Serializing::class, [$this, 'load']);
     }
 
     /**
@@ -35,7 +30,7 @@ class LoadUserSettings
      *
      * @param Serializing $event
      */
-    public function load(Serializing $event)
+    public function handle(Serializing $event)
     {
         if ($event->isSerializer(ForumSerializer::class)) {
             $event->attributes['flarum-ext-summaries.excerpt_length'] = $this->settings->get('flarum-ext-summaries.excerpt_length');
