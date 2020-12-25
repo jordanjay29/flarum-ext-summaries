@@ -12,6 +12,7 @@
 
 namespace JordanJay29\Summaries;
 
+use Flarum\Api\Event\Serializing;
 use Flarum\Extend;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -19,10 +20,13 @@ return [
     (new Extend\Frontend('forum'))
         ->js(__DIR__ . '/js/dist/forum.js')
         ->css(__DIR__ . '/resources/less/forum/extension.less'),
+        
     (new Extend\Frontend('admin'))
         ->js(__DIR__ . '/js/dist/admin.js'),
 
+    (new Extend\Event())
+        ->listen(Serializing::class, Listeners\LoadUserSettings::class),
+
     function (Dispatcher $events) {
         $events->subscribe(Listeners\AddApiAttributes::class);
-        $events->subscribe(Listeners\LoadUserSettings::class);
     }];

@@ -10,7 +10,7 @@ export default function addSummaryExcerpt() {
   });
 
   extend(DiscussionListItem.prototype, 'infoItems', function(items) {
-    const discussion = this.props.discussion;
+    const discussion = this.attrs.discussion;
 
     const firstPost = discussion.firstPost();
     const excerptLength = app.forum.attribute('flarum-ext-summaries.excerpt_length') || 200;

@@ -19,10 +19,11 @@
     ],
     "support": {
         "issues": "https://github.com/jordanjay29/flarum-ext-summaries/issues",
-        "source": "https://github.com/jordanjay29/flarum-ext-summaries"
+        "source": "https://github.com/jordanjay29/flarum-ext-summaries",
+        "forum": "https://discuss.flarum.org/d/2151"
     },
     "require": {
-        "flarum/core": "^0.1.0-beta.8"
+        "flarum/core": ">=0.1.0-beta.14 <0.1.0-beta.16"
     },
     "autoload": {
         "psr-4": {
@@ -38,6 +39,7 @@
         },
         "flarum-extension": {
             "title": "Summaries",
+            "category": "discussion",
             "icon": {
                 "name": "fas fa-sticky-note",
                 "backgroundColor": "#00bac9",
