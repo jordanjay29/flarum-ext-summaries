@@ -24,6 +24,10 @@ export default function addSummaryExcerpt() {
     extend(DiscussionListItem.prototype, 'infoItems', function (items) {
         const discussion = this.attrs.discussion;
 
+        if (app.session.user && !app.session.user.preferences().showSummaryExcerpts) {
+            return;
+        }
+
         const excerptPost = app.forum.attribute('summariesplus.excerpt_type') === 'first' ? discussion.firstPost() : discussion.lastPost();
         const excerptLength = app.forum.attribute('summariesplus.excerpt_length');
         const richExcerpt = app.forum.attribute('summariesplus.rich_excerpts');

@@ -13,7 +13,9 @@
 import app from 'flarum/app';
 
 import addSummaryExcerpt from './addSummaryExcerpt';
+import addUserPreference from './addUserPreference';
 
 app.initializers.add('ianm-summariesplus', () => {
     addSummaryExcerpt();
+    addUserPreference();
 });

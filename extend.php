@@ -38,4 +38,9 @@ return [
 
     (new Extend\ApiController(ListDiscussionsController::class))
         ->addInclude(['firstPost', 'lastPost']),
+
+    (new Extend\User())
+        ->registerPreference('showSummaryExcerpts', function ($value) {
+            return (bool) $value;
+        }, true),
 ];

@@ -7,9 +7,10 @@ A [Flarum](https://github.com/flarum/flarum) extension which adds excerpts to th
 ## Features
 As well as displaying an excerpt as a summary (with configurable length):
 
- - All settings options are translatable
- - toggle between displaying plain or rich content in the summary
- - choose from using either the first or latest post in the summary
+ - All display strings are translatable
+ - Toggle between displaying plain or rich content in the summary (admin)
+ - Choose from using either the first or latest post in the summary (admin)
+ - User preference to show/hide summaries
 
 ## Installation
 ```
