@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@jordanjay29/flarum-ext-summaries",
+  "name": "@ianm/summariesplus",
   "dependencies": {
     "flarum-webpack-config": "0.1.0-beta.10",
     "webpack": "^4.26.0",

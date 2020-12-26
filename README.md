@@ -1,22 +1,17 @@
-# Summaries (flarum-ext-summaries)
+# Summaries+
 
-An extension made for [Flarum](https://github.com/flarum/flarum) which adds a summary excerpt to each discussion on the discussion list page. This was inspired by the same behavior in Flarum's Sticky extension.
+![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/ianm/summariesplus.svg)](https://packagist.org/packages/ianm/summariesplus)
 
-**Changelog:**  
-Version 0.1.0  
-- Initial release.
+A [Flarum](https://github.com/flarum/flarum) extension which adds excerpts to the discussion list. This is essentially the same as [jordanjay29's](https://discuss.flarum.org/d/2151) [Summaries](https://github.com/jordanjay29/flarum-ext-summaries), with extra customisable options. If you don't need the extra options, I recommend using [Summaries](https://github.com/jordanjay29/flarum-ext-summaries) instead.
 
-Version 0.2.0  
-- New icon/color for extension. 
-- Added the ability to set a custom length for the excerpt (default is **200** characters)
+### Features
+As well as displaying an excerpt as a summary (with configurable length):
 
-Version 0.3.0
-- Update to Beta 8.  
+ - toggle between displaying plain or rich content in the summary
+ - choose from using either the first or latest post in the summary
 
-**Coming Soon:**  
-- ~~Configurable excerpt length~~ (**Completed**)
 
 **Links**  
-- [Github](https://github.com/jordanjay29/flarum-ext-summaries) (for code and issues)  
-- [Flarum](https://discuss.flarum.org/d/2151-summaries-showing-excerpts-on-discussions-page)  
-- [Packagist](https://packagist.org/packages/jordanjay29/flarum-ext-summaries)  
+- [Github](https://github.com/imorland/flarum-ext-summaries) (for code and issues)  
+- [Discuss](https://discuss.flarum.org/)  
+- [Packagist](https://packagist.org/packages/ianm/summariesplus)  

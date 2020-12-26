@@ -1,6 +1,6 @@
 {
-    "name": "jordanjay29/flarum-ext-summaries",
-    "description": "Show summaries on all discussions.",
+    "name": "ianm/summariesplus",
+    "description": "Show summaries on all discussions, with added customizations",
     "type": "flarum-extension",
     "keywords": [
         "flarum",
@@ -13,32 +13,39 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Jordan Schnaidt (jordanjay29)",
+            "name": "Jordan Schnaidt (Summaries)",
             "email": "jordanschnaidt@gmail.com"
+        },
+        {
+            "name": "IanM (Summaries+)",
+            "homepage": "https://discuss.flarum.org/u/ianm"
         }
     ],
     "support": {
-        "issues": "https://github.com/jordanjay29/flarum-ext-summaries/issues",
-        "source": "https://github.com/jordanjay29/flarum-ext-summaries",
-        "forum": "https://discuss.flarum.org/d/2151"
+        "issues": "https://github.com/imorland/flarum-ext-summaries/issues",
+        "source": "https://github.com/imorland/flarum-ext-summaries",
+        "forum": "https://discuss.flarum.org/"
     },
     "require": {
         "flarum/core": "^0.1.0-beta.15"
     },
     "autoload": {
         "psr-4": {
-            "JordanJay29\\Summaries\\": "src/"
+            "IanM\\Summaries\\": "src/"
         }
+    },
+    "conflict": {
+        "jordanjay29/flarum-ext-summaries": "*"
     },
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"
         },
         "flagrow": {
-            "discuss": "https://discuss.flarum.org/d/2151-summaries-showing-excerpts-on-discussions-page"
+            "discuss": "https://discuss.flarum.org/"
         },
         "flarum-extension": {
-            "title": "Summaries",
+            "title": "Summaries+",
             "category": "discussion",
             "icon": {
                 "name": "fas fa-sticky-note",

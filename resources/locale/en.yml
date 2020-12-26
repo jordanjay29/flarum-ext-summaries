@@ -1,4 +1,8 @@
-jordanjay-summaries:
+ianm-summariesplus:
   admin:
     settings:
-      excerpt-label: Summary excerpt length in characters (default is 200)
+      excerpt-label: Summary excerpt length in characters
+      rich-excerpts: Display excerpts using rich content
+      excerpt-type: Which post should be displayed as the excerpt?
+      first-label: First post
+      last-label: Last last

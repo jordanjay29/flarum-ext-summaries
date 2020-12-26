@@ -1,4 +1,6 @@
-/** This is part of the jordanjay/flarum-ext-summaries project.
+/* This is part of the ianm/summariesplus project.
+
+ * Additional modifications (c)2020 Ian Morland
  *
  * Modified code (c)2019 Jordan Schnaidt
  *
