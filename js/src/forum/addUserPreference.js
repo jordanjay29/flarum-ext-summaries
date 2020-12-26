@@ -58,25 +58,27 @@ export default function () {
             )
         );
 
-        items.add(
-            'summary-excerpts-mobile',
-            Switch.component(
-                {
-                    state: this.user.preferences().showSynopsisExcerptsOnMobile,
-                    disabled: !this.user.preferences().showSynopsisExcerpts,
-                    onchange: (value) => {
-                        this.showSynopsisExcerptsOnMobileLoading = true;
+        if (this.user.preferences().showSynopsisExcerpts) {
+            items.add(
+                'summary-excerpts-mobile',
+                Switch.component(
+                    {
+                        state: this.user.preferences().showSynopsisExcerptsOnMobile,
+                        disabled: !this.user.preferences().showSynopsisExcerpts,
+                        onchange: (value) => {
+                            this.showSynopsisExcerptsOnMobileLoading = true;
 
-                        this.user.savePreferences({ showSynopsisExcerptsOnMobile: value }).then(() => {
-                            this.showSynopsisExcerptsOnMobileLoading = false;
-                            window.location.reload();
-                        });
+                            this.user.savePreferences({ showSynopsisExcerptsOnMobile: value }).then(() => {
+                                this.showSynopsisExcerptsOnMobileLoading = false;
+                                window.location.reload();
+                            });
+                        },
+                        loading: this.showSynopsisExcerptsOnMobileLoading,
                     },
-                    loading: this.showSynopsisExcerptsOnMobileLoading,
-                },
-                app.translator.trans('ianm-synopsis.forum.user.settings.show-summaries-mobile')
-            )
-        );
+                    app.translator.trans('ianm-synopsis.forum.user.settings.show-summaries-mobile')
+                )
+            );
+        }
 
         return items;
     };
