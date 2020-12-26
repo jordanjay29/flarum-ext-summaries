@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@ianm/koobid",
+  "name": "@ianm/synopsis",
   "dependencies": {
     "flarum-webpack-config": "0.1.0-beta.10",
     "webpack": "^4.26.0",

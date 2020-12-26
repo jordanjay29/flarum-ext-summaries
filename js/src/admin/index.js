@@ -1,4 +1,4 @@
-/* This is part of the ianm/koobid project.
+/* This is part of the ianm/synopsis project.
 
  * Additional modifications (c)2020 Ian Morland
  *
@@ -13,31 +13,32 @@
 import app from 'flarum/app';
 
 function typeOptions() {
-  let opts;
-  (opts = ['first', 'last'].reduce((o, key) => {
-    o[key] = app.translator.trans(`ianm-koobid.admin.settings.${key}-label`);
+    let opts;
+    opts = ['first', 'last'].reduce((o, key) => {
+        o[key] = app.translator.trans(`ianm-synopsis.admin.settings.${key}-label`);
 
-    return o;
-  }, {}));
-  return opts;
-};
+        return o;
+    }, {});
+    return opts;
+}
 
-app.initializers.add('ianm-koobid', () => {
-  app.extensionData.for('ianm-koobid')
-    .registerSetting({
-      label: app.translator.trans('ianm-koobid.admin.settings.excerpt-label'),
-      setting: 'ianm-koobid.excerpt_length',
-      type: 'number',
-    })
-    .registerSetting({
-      label: app.translator.trans('ianm-koobid.admin.settings.rich-excerpts'),
-      setting: 'ianm-koobid.rich-excerpts',
-      type: 'boolean',
-    })
-    .registerSetting({
-      label: app.translator.trans('ianm-koobid.admin.settings.excerpt-type'),
-      setting: 'ianm-koobid.excerpt-type',
-      options: typeOptions(),
-      type: 'select'
-    });
+app.initializers.add('ianm-synopsis', () => {
+    app.extensionData
+        .for('ianm-synopsis')
+        .registerSetting({
+            label: app.translator.trans('ianm-synopsis.admin.settings.excerpt-label'),
+            setting: 'ianm-synopsis.excerpt_length',
+            type: 'number',
+        })
+        .registerSetting({
+            label: app.translator.trans('ianm-synopsis.admin.settings.rich-excerpts'),
+            setting: 'ianm-synopsis.rich-excerpts',
+            type: 'boolean',
+        })
+        .registerSetting({
+            label: app.translator.trans('ianm-synopsis.admin.settings.excerpt-type'),
+            setting: 'ianm-synopsis.excerpt-type',
+            options: typeOptions(),
+            type: 'select',
+        });
 });

@@ -1,4 +1,4 @@
-/* This is part of the ianm/koobid project.
+/* This is part of the ianm/synopsis project.
 
  * Additional modifications (c)2020 Ian Morland
  *
@@ -19,18 +19,20 @@ import Stream from 'flarum/utils/Stream';
 
 export default function () {
     extend(SettingsPage.prototype, 'oninit', function () {
-        this.showKoobidExcerpts = Stream(this.user.preferences().showKoobidExcerpts);
+        this.showSynopsisExcerpts = Stream(this.user.preferences().showSynopsisExcerpts);
     });
 
     extend(SettingsPage.prototype, 'settingsItems', function (items) {
         items.add(
-            'koobid',
-            FieldSet.component({
-                label: app.translator.trans('ianm-koobid.forum.user.settings.summaries-heading'),
-                className: 'Settings-Summaries',
-            },
-            this.summariesItems().toArray()
-            ));
+            'synopsis',
+            FieldSet.component(
+                {
+                    label: app.translator.trans('ianm-synopsis.forum.user.settings.summaries-heading'),
+                    className: 'Settings-Summaries',
+                },
+                this.summariesItems().toArray()
+            )
+        );
     });
 
     SettingsPage.prototype['summariesItems'] = function () {
@@ -38,21 +40,23 @@ export default function () {
 
         items.add(
             'summary-excerpts',
-            Switch.component({
-                state: this.user.preferences().showKoobidExcerpts,
-                onchange: (value) => {
-                    this.showKoobidExcerptsLoading = true;
+            Switch.component(
+                {
+                    state: this.user.preferences().showSynopsisExcerpts,
+                    onchange: (value) => {
+                        this.showSynopsisExcerptsLoading = true;
 
-                    this.user.savePreferences({ showKoobidExcerpts: value }).then(() => {
-                        this.showKoobidExcerptsLoading = false;
-                        m.redraw();
-                    })
+                        this.user.savePreferences({ showSynopsisExcerpts: value }).then(() => {
+                            this.showSynopsisExcerptsLoading = false;
+                            m.redraw();
+                        });
+                    },
+                    loading: this.showSynopsisExcerptsLoading,
                 },
-                loading: this.showKoobidExcerptsLoading
-            },
-            app.translator.trans('ianm-koobid.forum.user.settings.show-summaries')
-            ));
+                app.translator.trans('ianm-synopsis.forum.user.settings.show-summaries')
+            )
+        );
 
         return items;
-    }
+    };
 }

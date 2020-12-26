@@ -1,4 +1,4 @@
-/* This is part of the ianm/koobid project.
+/* This is part of the ianm/synopsis project.
 
  * Additional modifications (c)2020 Ian Morland
  *
@@ -24,13 +24,13 @@ export default function addSummaryExcerpt() {
     extend(DiscussionListItem.prototype, 'infoItems', function (items) {
         const discussion = this.attrs.discussion;
 
-        if (app.session.user && !app.session.user.preferences().showKoobidExcerpts) {
+        if (app.session.user && !app.session.user.preferences().showSynopsisExcerpts) {
             return;
         }
 
-        const excerptPost = app.forum.attribute('koobid.excerpt_type') === 'first' ? discussion.firstPost() : discussion.lastPost();
-        const excerptLength = app.forum.attribute('koobid.excerpt_length');
-        const richExcerpt = app.forum.attribute('koobid.rich_excerpts');
+        const excerptPost = app.forum.attribute('synopsis.excerpt_type') === 'first' ? discussion.firstPost() : discussion.lastPost();
+        const excerptLength = app.forum.attribute('synopsis.excerpt_length');
+        const richExcerpt = app.forum.attribute('synopsis.rich_excerpts');
 
         if (excerptPost) {
             const excerpt = <span>{m.trust(truncate(richExcerpt ? excerptPost.contentHtml() : excerptPost.contentPlain(), excerptLength))}</span>;

@@ -1,6 +1,6 @@
 <?php
 
-/* This is part of the ianm/koobid project.
+/* This is part of the ianm/synopsis project.
 
  * Additional modifications (c) 2020 Ian Morland
  *
@@ -12,7 +12,7 @@
  * file that was distributed with this source code.
  */
 
-namespace IanM\Koobid;
+namespace IanM\Synopsis;
 
 use Flarum\Api\Controller\ListDiscussionsController;
 use Flarum\Extend;
@@ -28,19 +28,19 @@ return [
     new Extend\Locales(__DIR__.'/resources/locale'),
 
     (new Extend\Settings())
-        ->serializeToForum('koobid.excerpt_length', 'ianm-koobid.excerpt_length', function ($value) {
+        ->serializeToForum('synopsis.excerpt_length', 'ianm-synopsis.excerpt_length', function ($value) {
             return (int) $value;
         })
-        ->serializeToForum('koobid.rich_excerpts', 'ianm-koobid.rich-excerpts', function ($value) {
+        ->serializeToForum('synopsis.rich_excerpts', 'ianm-synopsis.rich-excerpts', function ($value) {
             return (bool) $value;
         })
-        ->serializeToForum('koobid.excerpt_type', 'ianm-koobid.excerpt-type'),
+        ->serializeToForum('synopsis.excerpt_type', 'ianm-synopsis.excerpt-type'),
 
     (new Extend\ApiController(ListDiscussionsController::class))
         ->addInclude(['firstPost', 'lastPost']),
 
     (new Extend\User())
-        ->registerPreference('showKoobidExcerpts', function ($value) {
+        ->registerPreference('showSynopsisExcerpts', function ($value) {
             return (bool) $value;
         }, true),
 ];

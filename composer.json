@@ -1,5 +1,5 @@
 {
-    "name": "ianm/koobid",
+    "name": "ianm/synopsis",
     "description": "Show summary excerpts on discussion lists.",
     "type": "flarum-extension",
     "keywords": [
@@ -9,7 +9,7 @@
         "summaries",
         "excerpt",
         "excerpts",
-        "koobid"
+        "synopsis"
     ],
     "license": "MIT",
     "authors": [
@@ -19,8 +19,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/imorland/koobid/issues",
-        "source": "https://github.com/imorland/koobid",
+        "issues": "https://github.com/imorland/synopsis/issues",
+        "source": "https://github.com/imorland/synopsis",
         "forum": "https://discuss.flarum.org/"
     },
     "require": {
@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "IanM\\Koobid\\": "src/"
+            "IanM\\Synopsis\\": "src/"
         }
     },
     "conflict": {
@@ -39,11 +39,11 @@
             "discuss": "https://discuss.flarum.org/"
         },
         "flarum-extension": {
-            "title": "Koobid",
+            "title": "Synopsis",
             "category": "discussion",
             "icon": {
-                "name": "fas fa-sticky-note",
-                "backgroundColor": "#00bac9",
+                "name": "fas fa-comment-dots",
+                "backgroundColor": "#008000",
                 "color": "#fff"
             }
         }

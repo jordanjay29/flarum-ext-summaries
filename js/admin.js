@@ -1,4 +1,4 @@
-/* This is part of the ianm/koobid project.
+/* This is part of the ianm/synopsis project.
 
  * Additional modifications (c)2020 Ian Morland
  *

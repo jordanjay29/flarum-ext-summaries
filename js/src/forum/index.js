@@ -1,4 +1,4 @@
-/* This is part of the ianm/koobid project.
+/* This is part of the ianm/synopsis project.
 
  * Additional modifications (c)2020 Ian Morland
  *
@@ -15,7 +15,7 @@ import app from 'flarum/app';
 import addSummaryExcerpt from './addSummaryExcerpt';
 import addUserPreference from './addUserPreference';
 
-app.initializers.add('ianm-koobid', () => {
+app.initializers.add('ianm-synopsis', () => {
     addSummaryExcerpt();
     addUserPreference();
 });
