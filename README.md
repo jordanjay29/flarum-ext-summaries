@@ -7,6 +7,7 @@ A [Flarum](https://github.com/flarum/flarum) extension which adds excerpts to th
 ## Features
 As well as displaying an excerpt as a summary (with configurable length):
 
+ - All settings options are translatable
  - toggle between displaying plain or rich content in the summary
  - choose from using either the first or latest post in the summary
 
@@ -23,6 +24,7 @@ php flarum cache:clear
 ```
 
 ## Links
-- [Github](https://github.com/imorland/flarum-ext-summaries) (for code and issues)  
+- [Github](https://github.com/imorland/flarum-ext-summaries)
 - [Discuss](https://discuss.flarum.org/)  
-- [Packagist](https://packagist.org/packages/ianm/summariesplus)  
+- [Packagist](https://packagist.org/packages/ianm/summariesplus) 
+- [Summaries by jordanjay29 (the original extension)](https://github.com/jordanjay29/flarum-ext-summaries) 
