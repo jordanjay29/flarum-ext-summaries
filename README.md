@@ -15,10 +15,10 @@ As well as displaying an excerpt as a summary (with configurable length):
 ## Screenshots
 
 #### Admin settings
-![Admin settings](https://user-images.githubusercontent.com/16573496/103157041-13122980-47a7-11eb-9165-18c30b3b1815.png)
+![image](https://user-images.githubusercontent.com/16573496/103157392-18bd3e80-47aa-11eb-8760-2108fdb68000.png)
 
 #### Rich content in summary
-![Rich content](https://user-images.githubusercontent.com/16573496/103157062-4c4a9980-47a7-11eb-9103-327f3aff0690.png)
+![image](https://user-images.githubusercontent.com/16573496/103157062-4c4a9980-47a7-11eb-9103-327f3aff0690.png)
 
 #### User settings
 ![image](https://user-images.githubusercontent.com/16573496/103157069-697f6800-47a7-11eb-8cc5-c30900da3182.png)
