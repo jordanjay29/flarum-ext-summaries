@@ -38,9 +38,6 @@
         "jordanjay29/flarum-ext-summaries": "*"
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "0.1.x-dev"
-        },
         "flagrow": {
             "discuss": "https://discuss.flarum.org/"
         },
