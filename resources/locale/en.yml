@@ -10,4 +10,5 @@ ianm-synopsis:
     user:
       settings:
         summaries-heading: Summaries
-        show-summaries: Display an excerpt from each discussion in discussion lists (Desktop view only)
+        show-summaries: Display an excerpt from each discussion in discussion lists (Desktop/Tablet)
+        show-summaries-mobile: Display an excerpt from each discussion in discussion lists (Mobile)

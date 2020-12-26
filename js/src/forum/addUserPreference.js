@@ -20,6 +20,7 @@ import Stream from 'flarum/utils/Stream';
 export default function () {
     extend(SettingsPage.prototype, 'oninit', function () {
         this.showSynopsisExcerpts = Stream(this.user.preferences().showSynopsisExcerpts);
+        this.showSynopsisExcerptsOnMobile = Stream(this.user.preferences().showSynopsisExcerptsOnMobile);
     });
 
     extend(SettingsPage.prototype, 'settingsItems', function (items) {
@@ -54,6 +55,26 @@ export default function () {
                     loading: this.showSynopsisExcerptsLoading,
                 },
                 app.translator.trans('ianm-synopsis.forum.user.settings.show-summaries')
+            )
+        );
+
+        items.add(
+            'summary-excerpts-mobile',
+            Switch.component(
+                {
+                    state: this.user.preferences().showSynopsisExcerptsOnMobile,
+                    disabled: !this.user.preferences().showSynopsisExcerpts,
+                    onchange: (value) => {
+                        this.showSynopsisExcerptsOnMobileLoading = true;
+
+                        this.user.savePreferences({ showSynopsisExcerptsOnMobile: value }).then(() => {
+                            this.showSynopsisExcerptsOnMobileLoading = false;
+                            window.location.reload();
+                        });
+                    },
+                    loading: this.showSynopsisExcerptsOnMobileLoading,
+                },
+                app.translator.trans('ianm-synopsis.forum.user.settings.show-summaries-mobile')
             )
         );
 

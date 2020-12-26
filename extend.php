@@ -42,5 +42,8 @@ return [
     (new Extend\User())
         ->registerPreference('showSynopsisExcerpts', function ($value) {
             return (bool) $value;
-        }, true),
+        }, true)
+        ->registerPreference('showSynopsisExcerptsOnMobile', function ($value) {
+            return (bool) $value;
+        }, false),
 ];

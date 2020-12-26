@@ -11,6 +11,7 @@ As well as displaying an excerpt as a summary (with configurable length):
  - Toggle between displaying plain or rich content in the summary (admin)
  - Choose from using either the first or latest post in the summary (admin)
  - User preference to show/hide summaries
+ - User preference to enable summaries on mobile
 
 ## Screenshots
 
@@ -21,7 +22,7 @@ As well as displaying an excerpt as a summary (with configurable length):
 ![image](https://user-images.githubusercontent.com/16573496/103157062-4c4a9980-47a7-11eb-9103-327f3aff0690.png)
 
 #### User settings
-![image](https://user-images.githubusercontent.com/16573496/103157069-697f6800-47a7-11eb-8cc5-c30900da3182.png)
+![image](https://user-images.githubusercontent.com/16573496/103158069-b23c1e80-47b1-11eb-8877-29016b7e4b21.png)
 ## Installation
 ```
 composer require ianm/synopsis
