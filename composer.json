@@ -1,6 +1,6 @@
 {
-    "name": "ianm/summariesplus",
-    "description": "Show summaries on all discussions, with added customizations",
+    "name": "ianm/koobid",
+    "description": "Show summary excerpts on discussion lists.",
     "type": "flarum-extension",
     "keywords": [
         "flarum",
@@ -8,22 +8,19 @@
         "summary",
         "summaries",
         "excerpt",
-        "excerpts"
+        "excerpts",
+        "koobid"
     ],
     "license": "MIT",
     "authors": [
         {
-            "name": "Jordan Schnaidt (Summaries)",
-            "email": "jordanschnaidt@gmail.com"
-        },
-        {
-            "name": "IanM (Summaries+)",
+            "name": "IanM",
             "homepage": "https://discuss.flarum.org/u/ianm"
         }
     ],
     "support": {
-        "issues": "https://github.com/imorland/flarum-ext-summaries/issues",
-        "source": "https://github.com/imorland/flarum-ext-summaries",
+        "issues": "https://github.com/imorland/koobid/issues",
+        "source": "https://github.com/imorland/koobid",
         "forum": "https://discuss.flarum.org/"
     },
     "require": {
@@ -31,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "IanM\\Summaries\\": "src/"
+            "IanM\\Koobid\\": "src/"
         }
     },
     "conflict": {
@@ -42,7 +39,7 @@
             "discuss": "https://discuss.flarum.org/"
         },
         "flarum-extension": {
-            "title": "Summaries+",
+            "title": "Koobid",
             "category": "discussion",
             "icon": {
                 "name": "fas fa-sticky-note",

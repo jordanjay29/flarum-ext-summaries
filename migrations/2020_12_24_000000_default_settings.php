@@ -1,6 +1,6 @@
 <?php
 
-/* This is part of the ianm/summariesplus project.
+/* This is part of the ianm/koobid project.
 
  * Additional modifications (c) 2020 Ian Morland
  *
@@ -22,9 +22,9 @@ return [
          */
         $settings = app('flarum.settings');
 
-        $settings->set('ianm-summariesplus.excerpt_length', '200');
-        $settings->set('ianm-summariesplus.rich-excerpts', false);
-        $settings->set('ianm-summariesplus.excerpt-type', 'first');
+        $settings->set('ianm-koobid.excerpt_length', '200');
+        $settings->set('ianm-koobid.rich-excerpts', false);
+        $settings->set('ianm-koobid.excerpt-type', 'first');
     },
     'down' => function (Builder $schema) {
         // Do nothing

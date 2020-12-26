@@ -1,4 +1,4 @@
-/* This is part of the ianm/summariesplus project.
+/* This is part of the ianm/koobid project.
 
  * Additional modifications (c)2020 Ian Morland
  *
@@ -15,28 +15,28 @@ import app from 'flarum/app';
 function typeOptions() {
   let opts;
   (opts = ['first', 'last'].reduce((o, key) => {
-    o[key] = app.translator.trans(`ianm-summariesplus.admin.settings.${key}-label`);
+    o[key] = app.translator.trans(`ianm-koobid.admin.settings.${key}-label`);
 
     return o;
   }, {}));
   return opts;
 };
 
-app.initializers.add('ianm-summariesplus', () => {
-  app.extensionData.for('ianm-summariesplus')
+app.initializers.add('ianm-koobid', () => {
+  app.extensionData.for('ianm-koobid')
     .registerSetting({
-      label: app.translator.trans('ianm-summariesplus.admin.settings.excerpt-label'),
-      setting: 'ianm-summariesplus.excerpt_length',
+      label: app.translator.trans('ianm-koobid.admin.settings.excerpt-label'),
+      setting: 'ianm-koobid.excerpt_length',
       type: 'number',
     })
     .registerSetting({
-      label: app.translator.trans('ianm-summariesplus.admin.settings.rich-excerpts'),
-      setting: 'ianm-summariesplus.rich-excerpts',
+      label: app.translator.trans('ianm-koobid.admin.settings.rich-excerpts'),
+      setting: 'ianm-koobid.rich-excerpts',
       type: 'boolean',
     })
     .registerSetting({
-      label: app.translator.trans('ianm-summariesplus.admin.settings.excerpt-type'),
-      setting: 'ianm-summariesplus.excerpt-type',
+      label: app.translator.trans('ianm-koobid.admin.settings.excerpt-type'),
+      setting: 'ianm-koobid.excerpt-type',
       options: typeOptions(),
       type: 'select'
     });
