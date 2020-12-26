@@ -1,6 +1,9 @@
 import app from 'flarum/app';
-import SummarySettingsModal from './components/summarySettingsModal';
 
 app.initializers.add('jordanjay29-summaries', () => {
-  app.extensionSettings['jordanjay29-summaries'] = () => app.modal.show(SummarySettingsModal);
+    app.extensionData.for('jordanjay29-summaries').registerSetting({
+        label: app.translator.trans('jordanjay-summaries.admin.settings.excerpt-label'),
+        setting: 'flarum-ext-summaries.excerpt_length',
+        type: 'number',
+    });
 });
