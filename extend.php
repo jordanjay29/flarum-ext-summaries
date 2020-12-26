@@ -12,9 +12,8 @@
 
 namespace JordanJay29\Summaries;
 
-use Flarum\Api\Event\Serializing;
+use Flarum\Api\Controller\ListDiscussionsController;
 use Flarum\Extend;
-use Illuminate\Contracts\Events\Dispatcher;
 
 return [
     (new Extend\Frontend('forum'))
@@ -24,9 +23,11 @@ return [
     (new Extend\Frontend('admin'))
         ->js(__DIR__ . '/js/dist/admin.js'),
 
-    (new Extend\Event())
-        ->listen(Serializing::class, Listeners\LoadUserSettings::class),
+    new Extend\Locales(__DIR__.'/resources/locale'),
 
-    function (Dispatcher $events) {
-        $events->subscribe(Listeners\AddApiAttributes::class);
-    }];
+    (new Extend\Settings())
+        ->serializeToForum('flarum-ext-summaries.excerpt_length', 'flarum-ext-summaries.excerpt_length'),
+
+    (new Extend\ApiController(ListDiscussionsController::class))
+        ->addInclude('firstPost'),
+];
