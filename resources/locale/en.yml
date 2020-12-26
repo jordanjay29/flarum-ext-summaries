@@ -1,0 +1,4 @@
+jordanjay-summaries:
+  admin:
+    settings:
+      excerpt-label: Summary excerpt length in characters (default is 200)
