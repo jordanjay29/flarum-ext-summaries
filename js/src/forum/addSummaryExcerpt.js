@@ -31,7 +31,7 @@ export default function addSummaryExcerpt() {
         const excerptPost = app.forum.attribute('synopsis.excerpt_type') === 'first' ? discussion.firstPost() : discussion.lastPost();
         const excerptLength = app.forum.attribute('synopsis.excerpt_length');
         const richExcerpt = app.forum.attribute('synopsis.rich_excerpts');
-        const onMobile = app.session.user.preferences().showSynopsisExcerptsOnMobile;
+        const onMobile = app.session.user ? app.session.user.preferences().showSynopsisExcerptsOnMobile : false;
 
         if (excerptPost) {
             const excerpt = <span>{m.trust(truncate(richExcerpt ? excerptPost.contentHtml() : excerptPost.contentPlain(), excerptLength))}</span>;
