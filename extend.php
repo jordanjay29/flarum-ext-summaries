@@ -3,7 +3,7 @@
 /*
  * This file is part of the ianm/synopsis.
  *
- * (c) 2020 Ian Morland
+ * (c) 2020 - 2021 Ian Morland
  * (c) 2019 Jordan Schnaidt
  * (c) Toby Zerner <toby.zerner@gmail.com>
  *
