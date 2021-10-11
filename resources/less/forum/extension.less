@@ -7,6 +7,10 @@
   color: @muted-more-color;
   display: block;
 
+  // Fallback for `inert` HTML attribute
+  // Prevents interactivity with items within the excerpt
+  pointer-events: none;
+
   img {
     max-width: 100%
   }

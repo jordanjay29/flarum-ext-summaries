@@ -35,7 +35,7 @@ export default function addSummaryExcerpt() {
 
         if (excerptPost) {
             const excerpt = (
-                <div>
+                <div inert>
                     {richExcerpt ? m.trust(truncate(excerptPost.contentHtml(), excerptLength)) : truncate(excerptPost.contentPlain(), excerptLength)}
                 </div>
             );
