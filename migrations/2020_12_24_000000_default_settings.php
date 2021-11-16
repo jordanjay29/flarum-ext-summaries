@@ -19,7 +19,7 @@ return [
         /**
          * @var SettingsRepositoryInterface
          */
-        $settings = app('flarum.settings');
+        $settings = resolve('flarum.settings');
 
         $settings->set('ianm-synopsis.excerpt_length', '200');
         $settings->set('ianm-synopsis.rich-excerpts', false);
