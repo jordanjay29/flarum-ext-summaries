@@ -18,7 +18,8 @@ import { truncate } from 'flarum/common/utils/string';
 
 export default function addSummaryExcerpt() {
     extend(DiscussionListState.prototype, 'requestParams', function (params) {
-        params.include.push(['firstPost', 'lastPost']);
+        if (app.forum.attribute('synopsis.excerpt_type') === 'first') params.include.push('firstPost');
+        else params.include.push('lastPost');
     });
 
     extend(DiscussionListItem.prototype, 'infoItems', function (items) {
