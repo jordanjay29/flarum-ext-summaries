@@ -16,6 +16,8 @@ namespace IanM\Synopsis;
 use Flarum\Api\Controller\ListDiscussionsController;
 use Flarum\Api\Controller\UpdateDiscussionController;
 use Flarum\Extend;
+use Flarum\Tags\Api\Serializer\TagSerializer;
+use Flarum\Tags\Event\Saving as TagSaving;
 
 return [
     (new Extend\Frontend('forum'))
@@ -42,4 +44,10 @@ return [
     (new Extend\User())
         ->registerPreference('showSynopsisExcerpts', 'boolVal', true)
         ->registerPreference('showSynopsisExcerptsOnMobile', 'boolVal', false),
+
+    (new Extend\Event())
+        ->listen(TagSaving::class, Tags\Saving::class),
+
+    (new Extend\ApiSerializer(TagSerializer::class))
+        ->attributes(Tags\AddTagsAttrs::class),
 ];
